@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 
+
 /* create circuit shema */
 
 var CircuitSchema = new mongoose.Schema({
@@ -11,14 +12,4 @@ var CircuitSchema = new mongoose.Schema({
     updated_at: { type: Date},
 });
 
-/* get the updated at time to work */
-
-CircuitSchema.pre('save', fucntion(next){
-      now = new Date();
-      this.updated_at = now ;
-if (!this.created_at) {
-    this.created_at = now;
-}
-next();
-});
 module.exports = mongoose.model ('Circuit', CircuitSchema);
