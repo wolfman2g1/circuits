@@ -10,5 +10,7 @@ var CircuitSchema = new mongoose.Schema( {
     carrier: [ { type: Schema.Types.ObjectId, ref : 'CarrierSchema' }
                                         ]
     });
+
+/* start validation of data */
 module.exports = mongoose.model('Circuit', CircuitSchema);
                                         
