@@ -23,14 +23,14 @@ router.post('/', function(req, res, next) {
 /* find circuit */
 router.get('/:id', function(req, res, next){
     Circuit.findById(req.params.id, function(err, post) {
-        if(err) retun next(err);
+        if(err) return next(err);
         res.json(post);
     });
 });
 
 /* update circuit */
-router.get('/:id', function(req, res, ,next) {
-    Circuit.FindByIdAndUpdate(req.params.id, req.body, err, post) {
+router.get('/:id', function(req, res, next) {
+    Circuit.FindByIdAndUpdate(req.params.id, req.body, function(err, post) {
         if(err) return next(err);
         res.json(post);
     });
