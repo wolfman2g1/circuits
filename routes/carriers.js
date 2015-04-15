@@ -8,8 +8,8 @@ var Carrier = require('../models/carrier.js');
 router.get('/', function(req, res, next) {
     Carrier.find(function(err, carriers) {
         if(err) return next(err);
-        res.json(carriers);
-        
+        res.jsonp(carriers);
+
     });
 });
 
